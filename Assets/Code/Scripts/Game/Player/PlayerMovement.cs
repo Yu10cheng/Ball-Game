@@ -6,12 +6,15 @@ public class PlayerMovement : MonoBehaviour
 {
     // reference to the Rigidbody component called "Rb"
     public Rigidbody rb;
-    public float forwardForce = 2000f;
-    public float sidewaysForce = 500f;
+    public float forwardSpeed = 2000f;
+    public float sidewaysSpeed = 500f;
+    private Vector3 mousePosition;
+    public float xInput;
+    public float yInput;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // We marked this as "Fixed" Update becasue we
@@ -19,15 +22,23 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         //add a forward force
-        rb.AddForce(0, 0, forwardForce * Time.deltaTime);
+        rb.AddForce(0, 0, forwardSpeed * Time.deltaTime);
 
-        if (Input.GetAxis("Mouse X")<0)
+
+
+        if (Input.GetKey("d"))
         {
-            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0,ForceMode.VelocityChange);
+            rb.AddForce(sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
-        if (Input.GetAxis("Mouse X")>0)
+        if (Input.GetKey("a"))
         {
-            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+            rb.AddForce(-sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
+
+    }
+    private void ProcessInputs()
+    {
+        xInput = Input.GetAxis("Horizontal");
+        yInput = Input.GetAxis("Vertical");
     }
 }
