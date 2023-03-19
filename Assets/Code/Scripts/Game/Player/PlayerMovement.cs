@@ -21,13 +21,13 @@ public class PlayerMovement : MonoBehaviour
         //add a forward force
         rb.AddForce(0, 0, forwardForce * Time.deltaTime);
 
-        if (Input.GetKey("d"))
+        if (Input.GetAxis("Mouse X")<0)
         {
-            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0,ForceMode.VelocityChange);
         }
-        if (Input.GetKey("a"))
+        if (Input.GetAxis("Mouse X")>0)
         {
-            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0);
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
     }
 }
