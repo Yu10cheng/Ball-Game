@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
         {
             gameHasEnded = true;
             Debug.Log("game over");
-            Invoke("Restart", restartDelay);
+            Invoke("GameSummary", restartDelay);
 
         }
 
@@ -21,5 +21,10 @@ public class GameManager : MonoBehaviour
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void GameSummary()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
