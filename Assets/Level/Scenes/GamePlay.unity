@@ -1358,6 +1358,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: tilt
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: sensitivity
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: forceMultiplier
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087364547978515161, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: m_Drag
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087364547978515161, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2901878998944740281, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
       propertyPath: m_Name
       value: Player
