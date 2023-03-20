@@ -466,7 +466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You Result
+  m_text: 'Your Result
 
 '
   m_isRightToLeft: 0
