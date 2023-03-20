@@ -9,8 +9,8 @@ public class PlayerMovement : MonoBehaviour
     public float forwardSpeed = 2000f;
     public float sidewaysSpeed = 500f;
     private Vector3 mousePosition;
-    public float xInput;
-    public float yInput;
+    //public float xInput;
+    //public float yInput;
     // Start is called before the first frame update
     void Start()
     {
@@ -34,11 +34,16 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(-sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
+        if (rb.position.y < -1f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
 
     }
-    private void ProcessInputs()
+    /*private void ProcessInputs()
     {
         xInput = Input.GetAxis("Horizontal");
         yInput = Input.GetAxis("Vertical");
     }
+    */
 }

@@ -1,4 +1,4 @@
- using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,9 @@ public class PlayerCollision : MonoBehaviour
     {
         if (collisionInfo.collider.tag == "Obstacle")
         {
-            movement.enabled = false;
+            GetComponent<PlayerMovement>().enabled = false;
+            FindAnyObjectByType<GameManager>().EndGame();
+
         }
     }
 }
