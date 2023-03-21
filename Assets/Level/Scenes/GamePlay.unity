@@ -1663,6 +1663,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 6357477398861140014}
+    - target: {fileID: 6887023355020556372, guid: 53fe9a0b83c574c41b87a1a7d406c601, type: 3}
+      propertyPath: offsetCamera.z
+      value: -15
+      objectReference: {fileID: 0}
     - target: {fileID: 6887023355020556373, guid: 53fe9a0b83c574c41b87a1a7d406c601, type: 3}
       propertyPath: m_RootOrder
       value: 2

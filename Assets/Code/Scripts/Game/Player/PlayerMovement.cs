@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
         float xVelocity = targetX * xSpeedFactor * forceMultiplier;
         //make target move by adding this speed as force using rigidbody
         rb.AddForce(xVelocity, 0.0f, 0.0f);
-        rb.AddForce(0.0f, 0.0f, forwardSpeed * Time.deltaTime, ForceMode.VelocityChange);
+        rb.AddForce(0.0f, 0.0f, forwardSpeed * Time.fixedDeltaTime, ForceMode.VelocityChange);
         // give the maxSpeed limit
         if (rb.velocity.magnitude > maxSpeed)
         {
@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        /* 
+        /* Brackeys tutorial 
          if (Input.GetKey("d"))
          {
              rb.AddForce(sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
