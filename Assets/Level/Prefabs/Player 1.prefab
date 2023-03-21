@@ -130,7 +130,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1087364547978515161}
   forwardSpeed: 8000
-  sidewaysSpeed: 70
+  forceMultiplier: 100
+  maxSpeed: 50
+  tilt: 5
+  smoothing: 0.5
+  xSpeedFactor: 2
+  sensitivity: 20
 --- !u!114 &1087364547978515159
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     // reference to the Rigidbody component called "rb"
@@ -17,35 +18,68 @@ public class PlayerMovement : MonoBehaviour
     public float xSpeedFactor = 2.0f;
     public float sensitivity = 20.0f;
     private float targetX;
+    public float jumpForce = 2000f;
+    private bool isGrounded;
+    public Vector3 playerGravity;
+
+
+
     //private float currentVelocity = 0.0f;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        isGrounded = true;
+        playerGravity = Physics.gravity;
+
     }
 
     // We marked this as "Fixed" Update becasue we
     //are using it to mess with physics.
+
+
+
     void FixedUpdate()
     {
+        //This line gets the x-coordinate of the mouse position in pixels from the left edge of the screen.
+        //just a float number
         float mouseX = Input.mousePosition.x;
-        
+        //Simplified: float targetX = (mouseX / Screen.width) * 20 - 10;
+        //Mathf.Lerp t=0.5 means returns the middle position between old position targetX and new targetX position.
         targetX = Mathf.Lerp(targetX, (mouseX / Screen.width) * sensitivity - (sensitivity / 2), smoothing);
-
+        // give this number some factors to adjust its speed in Unity inspector
         float xVelocity = targetX * xSpeedFactor * forceMultiplier;
-        rb.AddForce(xVelocity, 0.0f, forwardSpeed * Time.deltaTime);
-
+        //make target move by adding this speed as force using rigidbody
+        rb.AddForce(xVelocity, 0.0f, 0.0f);
+        rb.AddForce(0.0f, 0.0f, forwardSpeed * Time.deltaTime, ForceMode.VelocityChange);
+        // give the maxSpeed limit
         if (rb.velocity.magnitude > maxSpeed)
         {
             rb.velocity = rb.velocity.normalized * maxSpeed;
         }
-
+        // calculate the targetRotation angle of rotate
         float rotationAngle = -targetX * tilt;
+        // apply rotation angle to the object z Axis of the object as rotate angle
         Quaternion targetRotation = Quaternion.Euler(0.0f, 0.0f, rotationAngle);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, smoothing);
+        // make the object continously rotate based on the new mouse position
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothing);
+        //make player jump
 
-        /*#1
+        if (Input.GetMouseButtonDown(0) && isGrounded)
+        {
+            rb.AddForce(0.0f, jumpForce, 0, ForceMode.VelocityChange);
+            isGrounded = false;
+        }
+
+
+
+
+
+
+
+
+        /*#1 simple move but not feeling good when playing the game.
         // Add forward movement using addforce
         rb.AddForce(0, 0, forwardSpeed * Time.deltaTime);
         float mouseX = Input.mousePosition.x;
@@ -81,6 +115,14 @@ public class PlayerMovement : MonoBehaviour
          */
 
 
+    }
+    void OncollisionEnter(Collision collisionGround)
+    {
+        if (collisionGround.collider.tag == ("Ground"))
+        {
+
+            isGrounded = true;
+        }
     }
 
 }
