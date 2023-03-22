@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerCollision : MonoBehaviour
 {
     public PlayerMovement movement;
-    
+    [SerializeField] private GameManager _gameManager;
 
     
     private void OnCollisionEnter(Collision collisionInfo)
@@ -14,7 +14,7 @@ public class PlayerCollision : MonoBehaviour
         if (collisionInfo.collider.tag == "Obstacle")
         {
             GetComponent<PlayerMovement>().enabled = false;
-            FindAnyObjectByType<GameManager>().EndGame();
+            _gameManager.EndGame();
 
         }
     }
