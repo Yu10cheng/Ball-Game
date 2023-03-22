@@ -1294,6 +1294,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 668d9809dcfd19645982ff281a5f981f, type: 3}
+--- !u!114 &1975048561 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3558047754035294766, guid: 3f8cc4bf3714b5c4fbbb02bb1c67c6ba, type: 3}
+  m_PrefabInstance: {fileID: 3558047754748261625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4874fc232ec7ec9498beaa27cae3bbf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2049171882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1358,6 +1369,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1087364547978515159, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: _gameManager
+      value: 
+      objectReference: {fileID: 1975048561}
     - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
       propertyPath: tilt
       value: 3

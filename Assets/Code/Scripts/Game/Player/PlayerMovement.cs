@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     public Vector3 playerGravity;
 
-
+	float distToGround;
 
     //private float currentVelocity = 0.0f;
 
@@ -32,8 +32,21 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         isGrounded = true;
         playerGravity = Physics.gravity;
+		
+		 distToGround =  GetComponent<Collider>().bounds.extents.y;// half the height of the game object
 
     }
+	
+	void Update()
+	{
+		
+		 if (Input.GetMouseButtonDown(0) && isGrounded)
+        {
+            rb.AddForce(0.0f, jumpForce, 0, ForceMode.VelocityChange);
+            isGrounded = false;
+        }
+	}
+	
 
     // We marked this as "Fixed" Update becasue we
     //are using it to mess with physics.
@@ -66,11 +79,7 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothing);
         //make player jump
 
-        if (Input.GetMouseButtonDown(0) && isGrounded)
-        {
-            rb.AddForce(0.0f, jumpForce, 0, ForceMode.VelocityChange);
-            isGrounded = false;
-        }
+
 
 
 
@@ -116,11 +125,18 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-    void OncollisionEnter(Collision collisionGround)
+	
+	/* bool IsGrounded()  
+	 {
+		 Debug.DrawRay(transform.position, -Vector3.up * distToGround + 0.1f,  Color.green );
+		 return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+	 }*/
+ 
+    void OnCollisionEnter(Collision collisionGround)
     {
+		
         if (collisionGround.collider.tag == ("Ground"))
         {
-
             isGrounded = true;
         }
     }
