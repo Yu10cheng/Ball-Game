@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 2000f;
     private bool isGrounded;
     public Vector3 playerGravity;
+    
 
 	float distToGround;
 
@@ -39,14 +40,23 @@ public class PlayerMovement : MonoBehaviour
 	
 	void Update()
 	{
-		
-		 if (Input.GetMouseButtonDown(0) && isGrounded)
+		//jump
+		if (Input.GetMouseButtonDown(0) && isGrounded)
         {
             rb.AddForce(0.0f, jumpForce, 0, ForceMode.VelocityChange);
             isGrounded = false;
         }
-	}
-	
+        /*if (isGrounded == false)
+        {
+            playerGravity.y = pGravity;
+        }
+        else
+        {
+            playerGravity = Physics.gravity;
+        }
+        */
+    }
+
 
     // We marked this as "Fixed" Update becasue we
     //are using it to mess with physics.
