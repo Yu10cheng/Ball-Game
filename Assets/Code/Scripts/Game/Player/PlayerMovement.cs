@@ -21,9 +21,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 2000f;
     private bool isGrounded;
     public Vector3 playerGravity;
-    
 
-	float distToGround;
+
+    float distToGround;
 
     //private float currentVelocity = 0.0f;
 
@@ -33,19 +33,14 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         isGrounded = true;
         playerGravity = Physics.gravity;
-		
-		 distToGround =  GetComponent<Collider>().bounds.extents.y;// half the height of the game object
+
+        distToGround = GetComponent<Collider>().bounds.extents.y;// half the height of the game object
 
     }
-	
-	void Update()
-	{
-		//jump
-		if (Input.GetMouseButtonDown(0) && isGrounded)
-        {
-            rb.AddForce(0.0f, jumpForce, 0, ForceMode.VelocityChange);
-            isGrounded = false;
-        }
+
+    public void Update()
+    {
+        Jump();
         /*if (isGrounded == false)
         {
             playerGravity.y = pGravity;
@@ -135,19 +130,29 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-	
-	/* bool IsGrounded()  
+
+    /* bool IsGrounded()  
 	 {
 		 Debug.DrawRay(transform.position, -Vector3.up * distToGround + 0.1f,  Color.green );
 		 return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
 	 }*/
- 
+
     void OnCollisionEnter(Collision collisionGround)
     {
-		
+
         if (collisionGround.collider.tag == ("Ground"))
         {
             isGrounded = true;
+        }
+    }
+
+    public void Jump()
+    {
+        //jump
+        if (Input.GetMouseButtonDown(0) && isGrounded)
+        {
+            rb.AddForce(0.0f, jumpForce, 0, ForceMode.VelocityChange);
+            isGrounded = false;
         }
     }
 

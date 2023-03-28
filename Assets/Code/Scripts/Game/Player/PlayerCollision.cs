@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class PlayerCollision : MonoBehaviour
 {
     public PlayerMovement movement;
+    public Transform player;
     [SerializeField] private GameManager _gameManager;
 
     
@@ -18,5 +18,12 @@ public class PlayerCollision : MonoBehaviour
 
         }
     }
-    
+
+    private void Update()
+    {
+        if (player.position.y< -1)
+        {
+            _gameManager.EndGame();
+        }
+    }
 }
