@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private float targetX;
     public float jumpForce = 2000f;
     private bool isGrounded;
-    public Vector3 playerGravity;
+    private Vector3 _playerGravity;
     
 
 
@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         isGrounded = true;
-        playerGravity = Physics.gravity;
+        _playerGravity = Physics.gravity;
 
         distToGround = GetComponent<Collider>().bounds.extents.y;// half the height of the game object
 
@@ -74,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(xVelocity, 0.0f, 0.0f);
         //add forward increasing speed
         rb.AddForce(0.0f, 0.0f, forwardSpeed * Time.fixedDeltaTime, ForceMode.VelocityChange);
-        
+         
         // give the maxSpeed limit
         if (rb.velocity.magnitude > maxSpeed)
         {

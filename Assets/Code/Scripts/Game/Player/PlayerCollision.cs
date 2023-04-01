@@ -26,4 +26,6 @@ public class PlayerCollision : MonoBehaviour
             _gameManager.EndGame();
         }
     }
+
+    
 }
