@@ -1334,6 +1334,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: addSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
       propertyPath: pGravity
       value: -100
       objectReference: {fileID: 0}
@@ -1342,12 +1346,16 @@ PrefabInstance:
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: smoothing
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
       propertyPath: sensitivity
-      value: 12
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
       propertyPath: forwardSpeed
-      value: 100
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
       propertyPath: xSpeedFactor
@@ -1606,7 +1614,15 @@ PrefabInstance:
     - target: {fileID: 4702428926746216042, guid: 0bd22e12e1d829f488eba10851514dc6, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 6357477398861140014}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702428926746216042, guid: 0bd22e12e1d829f488eba10851514dc6, type: 3}
+      propertyPath: xFactor
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702428926746216042, guid: 0bd22e12e1d829f488eba10851514dc6, type: 3}
+      propertyPath: zMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bd22e12e1d829f488eba10851514dc6, type: 3}
 --- !u!4 &6357477398861140014 stripped

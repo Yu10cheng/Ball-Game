@@ -7,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
 {
     // reference to the Rigidbody component called "rb"
     public Rigidbody rb;
-    public float forwardSpeed = 2000f;
+    public float forwardSpeed = 60f;
+    public float addSpeed = 1f;
     //public float sidewaysSpeed = 500f;
     //public float speed = 10.0f;
     //private Vector3 mousePosition;
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 2000f;
     private bool isGrounded;
     public Vector3 playerGravity;
+    
 
 
     float distToGround;
@@ -70,7 +72,9 @@ public class PlayerMovement : MonoBehaviour
         float xVelocity = targetX * xSpeedFactor * forceMultiplier;
         //make target move by adding this speed as force using rigidbody
         rb.AddForce(xVelocity, 0.0f, 0.0f);
+        //add forward increasing speed
         rb.AddForce(0.0f, 0.0f, forwardSpeed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        
         // give the maxSpeed limit
         if (rb.velocity.magnitude > maxSpeed)
         {
@@ -82,54 +86,55 @@ public class PlayerMovement : MonoBehaviour
         Quaternion targetRotation = Quaternion.Euler(0.0f, 0.0f, rotationAngle);
         // make the object continously rotate based on the new mouse position
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothing);
-        //make player jump
-
-
-
-
-
-
-
-
-
-
-        /*#1 simple move but not feeling good when playing the game.
-        // Add forward movement using addforce
-        rb.AddForce(0, 0, forwardSpeed * Time.deltaTime);
-        float mouseX = Input.mousePosition.x;
-        targetX = Mathf.Lerp(targetX, (mouseX / Screen.width) * sensitivity - (sensitivity / 2), smoothing);
-
-        Vector3 newPosition = transform.position;
-        //newPosition.z += Time.deltaTime * speed;
-        newPosition.x = targetX;
         
-        transform.position= newPosition;
-
-        float rotationAngle = -targetX * tilt;
-        Quaternion targetRotation = Quaternion.Euler(0.0f, 0.0f, rotationAngle);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, smoothing);
-        */
-        //add a forward force
+        
 
 
 
-        /* Brackeys tutorial 
-         if (Input.GetKey("d"))
-         {
-             rb.AddForce(sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-         }
-         if (Input.GetKey("a"))
-         {
-             rb.AddForce(-sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-         }
-         if (rb.position.y < -1f)
-         {
-             FindObjectOfType<GameManager>().EndGame();
-         }
-         */
 
 
-    }
+
+
+
+
+
+    /*#1 simple move but not feeling good when playing the game.
+    // Add forward movement using addforce
+    rb.AddForce(0, 0, forwardSpeed * Time.deltaTime);
+    float mouseX = Input.mousePosition.x;
+    targetX = Mathf.Lerp(targetX, (mouseX / Screen.width) * sensitivity - (sensitivity / 2), smoothing);
+
+    Vector3 newPosition = transform.position;
+    //newPosition.z += Time.deltaTime * speed;
+    newPosition.x = targetX;
+
+    transform.position= newPosition;
+
+    float rotationAngle = -targetX * tilt;
+    Quaternion targetRotation = Quaternion.Euler(0.0f, 0.0f, rotationAngle);
+    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, smoothing);
+    */
+    //add a forward force
+
+
+
+    /* Brackeys tutorial 
+     if (Input.GetKey("d"))
+     {
+         rb.AddForce(sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+     }
+     if (Input.GetKey("a"))
+     {
+         rb.AddForce(-sidewaysSpeed * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+     }
+     if (rb.position.y < -1f)
+     {
+         FindObjectOfType<GameManager>().EndGame();
+     }
+     */
+
+
+}
 
     /* bool IsGrounded()  
 	 {
