@@ -7,47 +7,61 @@ public class ObstacleSpwaner1 : MonoBehaviour
     public Transform[] obstacleSpawnPoints;
     private bool showObstacleSp1;
     public GameObject smallObstacle;
-    public GameObject player;
-    private float _distanceToPlayer;
-    public float minDistance;
     bool spwanObstacles = true;
-    // Start is called before the first frame update
+
+    //public GameObject player;
+    //public float minDistance;
+    //private float _distanceToPlayer;
+    //bool calculateDis = true;
+
     void Start()
     {
         showObstacleSp1 = true;
-        player = GameObject.Find("Player");
-        
+        //player = GameObject.FindGameObjectWithTag("Player");
+        Invoke("SpawnObstacles", 1);
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (spwanObstacles == true)
-        {
-            Invoke("SpawnObstacles", 1);
-            spwanObstacles = false;
-        }
         
+
     }
 
     public void SpawnObstacles()
     {
         if (showObstacleSp1 == true)
         {
-            int randomIndex = Random.Range(0, obstacleSpawnPoints.Length);
-
-            for (int i = 0; i < obstacleSpawnPoints.Length; i++)
+            /*int randomIndex = Random.Range(0, obstacleSpawnPoints.Length);
+            if (calculateDis == true)
             {
-                if (randomIndex == i)
+                calculateDis = false;
+                _distanceToPlayer = Vector3.Distance(player.transform.position, obstacleSpawnPoints[0].position);
+                if (_distanceToPlayer > minDistance)
                 {
-                    _distanceToPlayer = Vector3.Distance(player.transform.position, obstacleSpawnPoints[i].position);
-                    if (_distanceToPlayer > minDistance)
+                    for (int i = 0; i < obstacleSpawnPoints.Length; i++)
                     {
-                        Instantiate(smallObstacle, obstacleSpawnPoints[i].position, Quaternion.identity, transform);
+                        if (randomIndex == i)
+                        {
+                            Instantiate(smallObstacle, obstacleSpawnPoints[i].position, Quaternion.identity, transform);
+                            
+                        }
                     }
-                    
                 }
             }
+            */
+
+            int randomIndex = Random.Range(0, obstacleSpawnPoints.Length);
+            for (int i = 0; i < obstacleSpawnPoints.Length; i++)
+            {
+
+                if (randomIndex == i)
+                {
+                    Instantiate(smallObstacle, obstacleSpawnPoints[i].position, Quaternion.identity, transform);
+                }
+            }
+
+
         }
 
 

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8319593882863043008}
-  - component: {fileID: 713342267178549300}
+  - component: {fileID: 5355683334096717791}
   m_Layer: 0
-  m_Name: Obstacle Spawner
+  m_Name: BigSpwanPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -37,7 +37,7 @@ Transform:
   m_Father: {fileID: 300371740868924544}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &713342267178549300
+--- !u!114 &5355683334096717791
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   - {fileID: 1003015083679647874}
   smallObstacle: {fileID: 4921440583440827225, guid: 668d9809dcfd19645982ff281a5f981f, type: 3}
   player: {fileID: 0}
-  minDistance: 10
+  minDistance: 100
 --- !u!1 &186229598093971750
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,8 +136,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 20, y: 1, z: 60}
-  m_Center: {x: 0, y: 0, z: 10}
+  m_Size: {x: 20, y: 1, z: 60.307426}
+  m_Center: {x: 0, y: 0, z: 10.002773}
 --- !u!114 &7271412821255571912
 MonoBehaviour:
   m_ObjectHideFlags: 0

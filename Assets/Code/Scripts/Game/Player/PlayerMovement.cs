@@ -8,7 +8,8 @@ public class PlayerMovement : MonoBehaviour
     // reference to the Rigidbody component called "rb"
     public Rigidbody rb;
     public float forwardSpeed = 60f;
-    public float addSpeed = 1f;
+    //public float addSpeed = 1f;
+    public float maxforwardSpeed = 150f;
     //public float sidewaysSpeed = 500f;
     //public float speed = 10.0f;
     //private Vector3 mousePosition;
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 2000f;
     private bool isGrounded;
     private Vector3 _playerGravity;
+    public int coins = 0;
     
 
 
@@ -35,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         isGrounded = true;
         _playerGravity = Physics.gravity;
-
+        forwardSpeed = 80f;
         distToGround = GetComponent<Collider>().bounds.extents.y;// half the height of the game object
 
     }
@@ -73,7 +75,17 @@ public class PlayerMovement : MonoBehaviour
         //make target move by adding this speed as force using rigidbody
         rb.AddForce(xVelocity, 0.0f, 0.0f);
         //add forward increasing speed
-        rb.AddForce(0.0f, 0.0f, forwardSpeed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        //forwardSpeed += addSpeed;
+        
+        if (forwardSpeed >= maxforwardSpeed)
+        {
+            rb.AddForce(0.0f, 0.0f, maxforwardSpeed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        }
+        else
+        {
+            rb.AddForce(0.0f, 0.0f, forwardSpeed * Time.fixedDeltaTime, ForceMode.VelocityChange);
+        }
+        
          
         // give the maxSpeed limit
         if (rb.velocity.magnitude > maxSpeed)
@@ -157,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isGrounded)
         {
             rb.AddForce(0.0f, jumpForce, 0, ForceMode.VelocityChange);
+            coins++;
             isGrounded = false;
         }
     }

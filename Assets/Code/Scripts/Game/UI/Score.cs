@@ -14,6 +14,7 @@ public class Score : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        scoreText = GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
