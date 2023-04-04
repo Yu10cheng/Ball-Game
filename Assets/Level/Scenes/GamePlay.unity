@@ -382,7 +382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -821, y: 448}
+  m_AnchoredPosition: {x: -818, y: 445}
   m_SizeDelta: {x: 62.754, y: 42.035}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1995121421
@@ -398,6 +398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playermovement: {fileID: 0}
+  coinsSO: {fileID: 11400000, guid: 72cb6f8d53385534ba769ad7d68c0d8b, type: 2}
   coinsText: {fileID: 0}
   coinsMultiplier: 1
 --- !u!114 &1995121422
@@ -520,6 +521,10 @@ PrefabInstance:
       propertyPath: speed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: coinsSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 72cb6f8d53385534ba769ad7d68c0d8b, type: 2}
     - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
       propertyPath: addSpeed
       value: 5
@@ -814,6 +819,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4702428926746216042, guid: 0bd22e12e1d829f488eba10851514dc6, type: 3}
+      propertyPath: scoreSO
+      value: 
+      objectReference: {fileID: 11400000, guid: 105b0bcc9695acd46bd3ba692f56eb72, type: 2}
     - target: {fileID: 4702428926746216042, guid: 0bd22e12e1d829f488eba10851514dc6, type: 3}
       propertyPath: xFactor
       value: 0.5

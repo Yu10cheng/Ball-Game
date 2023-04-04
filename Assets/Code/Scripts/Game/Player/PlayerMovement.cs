@@ -23,7 +23,9 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce = 2000f;
     private bool isGrounded;
     private Vector3 _playerGravity;
-    public int coins = 0;
+    //public int coins = 0;
+    [SerializeField]
+    private FloatSO coinsSO;
     
 
 
@@ -169,7 +171,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && isGrounded)
         {
             rb.AddForce(0.0f, jumpForce, 0, ForceMode.VelocityChange);
-            coins++;
+            coinsSO.Value++;
             isGrounded = false;
         }
     }

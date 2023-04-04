@@ -421,6 +421,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ad0b0922c89dbc418e40803cc7b8eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSO: {fileID: 11400000, guid: 72cb6f8d53385534ba769ad7d68c0d8b, type: 2}
+  scoreSO: {fileID: 11400000, guid: 105b0bcc9695acd46bd3ba692f56eb72, type: 2}
 --- !u!1 &303503906
 GameObject:
   m_ObjectHideFlags: 0
@@ -803,8 +805,9 @@ GameObject:
   - component: {fileID: 553593052}
   - component: {fileID: 553593054}
   - component: {fileID: 553593053}
+  - component: {fileID: 553593055}
   m_Layer: 5
-  m_Name: Final Coin
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -929,6 +932,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 553593051}
   m_CullTransparentMesh: 1
+--- !u!114 &553593055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 553593051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa910ea079dc2d340a995e0b393fc562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultSO: {fileID: 11400000, guid: 72cb6f8d53385534ba769ad7d68c0d8b, type: 2}
+  textResult: {fileID: 0}
 --- !u!1 &633773037
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,8 +957,9 @@ GameObject:
   - component: {fileID: 633773038}
   - component: {fileID: 633773040}
   - component: {fileID: 633773039}
+  - component: {fileID: 633773041}
   m_Layer: 5
-  m_Name: Final Score
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1066,6 +1084,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 633773037}
   m_CullTransparentMesh: 1
+--- !u!114 &633773041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633773037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa910ea079dc2d340a995e0b393fc562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultSO: {fileID: 11400000, guid: 105b0bcc9695acd46bd3ba692f56eb72, type: 2}
+  textResult: {fileID: 0}
 --- !u!1 &802055927
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +1606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 564eb61836acfa94e8ec20fdaa6927d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinSO: {fileID: 11400000, guid: 72cb6f8d53385534ba769ad7d68c0d8b, type: 2}
+  scoreSO: {fileID: 11400000, guid: 105b0bcc9695acd46bd3ba692f56eb72, type: 2}
 --- !u!1 &1349969714
 GameObject:
   m_ObjectHideFlags: 0
