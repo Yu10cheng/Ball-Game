@@ -397,7 +397,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7344bbe5adeb7a428e63d9a250cca6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playermovement: {fileID: 0}
+  playermovement: {fileID: 6357477398861140018}
   coinsSO: {fileID: 11400000, guid: 72cb6f8d53385534ba769ad7d68c0d8b, type: 2}
   coinsText: {fileID: 0}
   coinsMultiplier: 1
@@ -510,6 +510,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6357477398861140014}
     - target: {fileID: 1087364547978515159, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087364547978515159, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 1975048561}
@@ -540,6 +544,10 @@ PrefabInstance:
     - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
       propertyPath: jumpForce
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
       propertyPath: smoothing
@@ -843,6 +851,17 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 1087364547978515161, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
   m_PrefabInstance: {fileID: 1087364548669846701}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &6357477398861140018 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+  m_PrefabInstance: {fileID: 1087364548669846701}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ce28ddf6ce1d2f49b1c0686d87a818c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6887023355764953189
 PrefabInstance:
   m_ObjectHideFlags: 0

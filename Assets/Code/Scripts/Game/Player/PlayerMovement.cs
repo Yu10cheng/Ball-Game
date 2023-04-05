@@ -79,6 +79,7 @@ public class PlayerMovement : MonoBehaviour
         //add forward increasing speed
         //forwardSpeed += addSpeed;
         
+		
         if (forwardSpeed >= maxforwardSpeed)
         {
             rb.AddForce(0.0f, 0.0f, maxforwardSpeed * Time.fixedDeltaTime, ForceMode.VelocityChange);
@@ -89,11 +90,9 @@ public class PlayerMovement : MonoBehaviour
         }
         
          
-        // give the maxSpeed limit
-        if (rb.velocity.magnitude > maxSpeed)
-        {
-            rb.velocity = rb.velocity.normalized * maxSpeed;
-        }
+        
+		
+		
         // calculate the targetRotation angle of rotate
         float rotationAngle = -targetX * tilt;
         // apply rotation angle to the object z Axis of the object as rotate angle
@@ -102,7 +101,6 @@ public class PlayerMovement : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, smoothing);
         
         
-
 
 
 
@@ -165,7 +163,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void Jump()
+    private void Jump()
     {
         //jump
         if (Input.GetMouseButtonDown(0) && isGrounded)
