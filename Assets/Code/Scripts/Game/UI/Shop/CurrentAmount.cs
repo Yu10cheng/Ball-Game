@@ -6,9 +6,20 @@ using TMPro;
 public class CurrentAmount : MonoBehaviour
 {
     [SerializeField] FloatSO upgradeSO;
-    private TextMeshProUGUI currentText;
+    public TextMeshProUGUI currentText;
     private void Update()
     {
         currentText.text = "Current" + " = " + upgradeSO.Value.ToString("0");
+    }
+
+    private void OnDisable()
+    {
+        PlayerPrefs.SetFloat("UpgradeValue", upgradeSO.Value);
+        PlayerPrefs.Save();
+    }
+
+    private void Awake()
+    {
+        upgradeSO.Value = PlayerPrefs.GetFloat("UpgradeValue", 0f);
     }
 }

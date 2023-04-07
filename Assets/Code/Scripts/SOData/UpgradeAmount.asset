@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a03ad426c3b5287439cca8affad3ec13, type: 3}
   m_Name: UpgradeAmount
   m_EditorClassIdentifier: 
-  _value: 0
+  _value: 106

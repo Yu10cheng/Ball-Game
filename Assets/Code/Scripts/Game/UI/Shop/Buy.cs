@@ -7,8 +7,9 @@ public class Buy : MonoBehaviour
     [SerializeField] FloatSO UpgradeAmount;
     [SerializeField] FloatSO TotalSO;
 
+
     
-    private void BuyUpgrade()
+    public void BuyUpgrade()
     {
         if (TotalSO.Value >= 10f)
         {

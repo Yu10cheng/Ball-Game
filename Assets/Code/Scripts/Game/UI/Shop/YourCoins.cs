@@ -17,7 +17,12 @@ public class YourCoins : MonoBehaviour
 
     private void Start()
     {
-        totalCoinsSO.AddScore(coinsSO.Value);
+        totalCoinsSO.LoadScore();
+        
+    }
+
+    private void Update()
+    {
         totalResult.text = "Your Coins" + " = " + totalCoinsSO.Value.ToString("0");
     }
 
