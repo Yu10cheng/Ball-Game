@@ -14,8 +14,8 @@ namespace ScoreScreen
         [SerializeField] private FloatSO scoreSO;
         public void BackToMenu()
         {
-            coinSO.Value = 0;
-            scoreSO.Value = 0;
+            scoreSO.ResetScore();
+            coinSO.ResetScore();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
         }
 

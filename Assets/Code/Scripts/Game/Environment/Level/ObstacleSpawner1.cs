@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleSpwaner1 : MonoBehaviour
+public class ObstacleSpawner1 : MonoBehaviour
 {
     public Transform[] obstacleSpawnPoints;
     private bool showObstacleSp1;

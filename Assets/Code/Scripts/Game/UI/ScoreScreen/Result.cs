@@ -15,9 +15,5 @@ public class Result : MonoBehaviour
         textResult.text = this.name + "  =  " + resultSO.Value.ToString("0");
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 }

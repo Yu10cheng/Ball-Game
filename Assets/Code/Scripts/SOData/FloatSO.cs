@@ -13,5 +13,24 @@ public class FloatSO : ScriptableObject
         get { return _value; }
         set { _value = value; }
     }
+    public void AddScore(float amount)
+    {
+        Value += amount;
+    }
 
+    public void ResetScore()
+    {
+        Value = 0f;
+    }
+
+    public void SaveScore()
+    {
+        PlayerPrefs.SetFloat("Value", Value);
+        PlayerPrefs.Save();
+    }
+
+    public void LoadScore()
+    {
+        Value = PlayerPrefs.GetFloat("Value", 0f);
+    }
 }
