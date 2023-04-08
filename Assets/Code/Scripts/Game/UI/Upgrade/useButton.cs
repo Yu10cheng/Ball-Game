@@ -10,7 +10,7 @@ public class useButton : MonoBehaviour
     private ColorBlock mycolors;
     [SerializeField] FloatSO UpgradeSO;
     [SerializeField] BoolSO upgrade;
-    
+    public bool ifUsedUpgrade;
 
 
     private void Awake()
@@ -25,7 +25,7 @@ public class useButton : MonoBehaviour
         {
             pressButton.enabled = false;
             UpgradeSO.Value--;
-            
+            ifUsedUpgrade = true;
             
         }
         else
@@ -45,7 +45,7 @@ public class useButton : MonoBehaviour
 
     public void UpgradeExpired()
     {
-        
+        ifUsedUpgrade = false;
         upgrade.value = false;
     }
 
