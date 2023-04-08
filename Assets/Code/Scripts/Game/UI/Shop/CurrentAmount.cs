@@ -9,7 +9,7 @@ public class CurrentAmount : MonoBehaviour
     public TextMeshProUGUI currentText;
     private void Update()
     {
-        currentText.text = "Current" + " = " + upgradeSO.Value.ToString("0");
+        currentText.text = "Own" + " : " + upgradeSO.Value.ToString("0");
     }
 
     private void OnDisable()

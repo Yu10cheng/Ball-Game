@@ -517,6 +517,10 @@ PrefabInstance:
       propertyPath: _gameManager
       value: 
       objectReference: {fileID: 1975048561}
+    - target: {fileID: 1087364547978515159, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: ifUsedUpgrade
+      value: 
+      objectReference: {fileID: 11400000, guid: e3bf2ebb8e3d87d469ca2ad965ebd6eb, type: 2}
     - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
       propertyPath: tilt
       value: 3
@@ -565,6 +569,10 @@ PrefabInstance:
       propertyPath: xSpeedFactor
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
+      propertyPath: ifUpgradeUsed
+      value: 
+      objectReference: {fileID: 11400000, guid: e3bf2ebb8e3d87d469ca2ad965ebd6eb, type: 2}
     - target: {fileID: 1087364547978515160, guid: 717522b8f0e04e243829a29c8b01d41c, type: 3}
       propertyPath: forceMultiplier
       value: 10
